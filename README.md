@@ -849,7 +849,7 @@ export default router;
 ```
 
 ## Our Short Demo Video
-[![Watch the video]()](https://x.com/devDpro?Ot5fkh4LWk0lcDPjN0WVtw&s=09) 
+[![Watch the video](https://img.youtube.com/vi/B2quRaj8MHE/maxresdefault.jpg)](https://youtu.be/B2quRaj8MHE) 
 
 ## Contributors
 `Twitter`
