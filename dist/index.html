@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Race car game</title>
+    <script src="/race-game-threejs-master.67bac37c.js"></script>
+    <script src="/race-game-threejs-master.e114bdde.js"></script>
+    <script src="/race-game-threejs-master.215c5793.js"></script>
+    <script src="/race-game-threejs-master.442d815e.js"></script>
+    <script src="/race-game-threejs-master.a565aee0.js"></script>
+    <script src="/race-game-threejs-master.af093a95.js"></script>
+    <style>body {
+  background-color: #000;
+  overflow: hidden;
+}
+
+canvas {
+  margin: 0 auto;
+  display: block;
+  top: 50px;
+}
+
+.score-container {
+  transition: transform .5s 4s;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.score-container #score {
+  color: #fff;
+  background: #00000080;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: Exo, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.mission-board {
+  z-index: 100;
+  color: #fff;
+  background: #000;
+  border-radius: 10px;
+  flex-direction: column;
+  width: 80%;
+  height: fit-content;
+  padding: 10px;
+  display: none;
+  position: absolute;
+  top: 10vh;
+  left: 10%;
+}
+</style>
+</head>
+<body>
+<div class="score-container">
+    <div id="score"></div>
+</div>
+<!--<div id="message" style="color:green; background-color: #a06cc2"></div>-->
+
+<div id="ThreeJS"></div>
+<div class="mission-board">
+    <span>Mission Board</span>
+    <div class="mission-box">
+          <span class="mission-label">
+             Mission 1
+          </span>
+           <div class="mission-profit">
+              <div class="mission-req"><span>Earn 30 diamonds</span></div>
+               <div class="mission-xp">100XP</div>
+           </div>
+    </div>
+    <div class="start-button">Start</div>
+</div>
+<script src="/race-game-threejs-master.bf6b1a8b.js" type="module"></script>
+
+</body></html>

@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "three": "^0.179.1"
+  },
+  "name": "race-game-threejs-master",
+  "version": "1.0.0",
+  "description": "A simple race game using three.js",
+
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Race car game</title>
+    <script src="./public/js/three.min.js" ></script>
+    <script src="./public/js/Detector.js"></script>
+    <script src="./public/js/OrbitControls.js"></script>
+    <script src="./public/js/THREEx.KeyboardState.js"></script>
+    <script src="./public/js/THREEx.FullScreen.js"></script>
+    <script src="./public/js/THREEx.WindowResize.js"></script>
+    <style>
+        body {
+            background-color: #000;
+            overflow: hidden;
+            background-image: url("/public/textures/crypto.PNG");background-size:100% 100vh;background-repeat: no-repeat;
+        }
+
+        .score-container {
+            /*background-color: red;*/
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: transform 0.5s 4s;display: none;
+        }
+
+        .score-container #score {
+            color: white;
+            font-size: 16px;
+            font-family: 'Exo', sans-serif;
+            font-weight: 700;
+            background:rgba(0, 0, 0, 0.5);
+              padding:10px;border-radius: 10px;
+        }
+          .diamond-container {
+            /*background-color: red;*/
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transition: transform 0.5s 4s;display: none;
+        }
+
+        .diamond-container #diamond {
+            color: rgb(22, 255, 216);
+            font-size: 16px;
+            font-family: 'Exo', sans-serif;
+            font-weight: 700;
+            background:rgba(0, 0, 0, 0.3);
+              padding:10px;border-radius: 10px;
+        }
+          .xp-container {
+            /*background-color: red;*/
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transition: transform 0.5s 4s;
+        }
+
+        .xp-container #xp {
+            color: white;
+            font-size: 16px;
+            font-family: 'Exo', sans-serif;
+            font-weight: 700;
+            background:rgba(0, 0, 0, 0.3);
+              padding:10px;border-radius: 10px;
+              color:aliceblue;
+        }
+          .wallet-container {
+            /*background-color: red;*/
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            transition: transform 0.5s 4s;
+        }
+
+        .wallet-container #wallet {
+            color: white;
+            font-size: 16px;
+            font-family: 'Exo', sans-serif;
+            font-weight: 700;
+            background:rgba(0, 0, 0, 0.3);
+              padding:10px;border-radius: 10px;
+              color:aliceblue;
+        }
+        .mission-board{
+            position:absolute;
+            display:flex;flex-direction:column;padding:10px;border-radius: 10px;background:black;z-index: 100;width:80%;height: fit-content;left:10%;top:10vh;color:white;align-items: center;
+                 min-height: 70vh;
+        }
+         .finished-board{
+            position:absolute;
+            display:flex;flex-direction:column;padding:10px;border-radius: 10px;background:black;z-index: 100;width:80%;height: fit-content;left:10%;top:10vh;color:white;align-items: center;
+                 transition: all 0.5s;display:none;padding-bottom: 30px;
+        }
+        #ThreeJS{
+            display: none;width:100%;height: 100vh;background:black;
+        }
+        .mission-board > .label {
+             display: inline-block;width:90%;margin:20px 0; font-size:25px;font-weight: bold;text-align: center;
+        }
+          .finished-board > .label {
+             display: inline-block;width:90%;margin:20px 0; font-size:25px;font-weight: bold;text-align: center;
+        }
+        .mission-box ,.finished-box {
+width:90%;height:auto;padding:15px;display:flex;flex-direction: column;
+        }
+        .mission-label, .finished-label{
+             font-size:20px;color:rgb(231, 231, 231);font-weight: 300;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;margin:8px 0;
+        }
+        .mission-profit , .finished-profit{
+            width:100%;display: flex;flex-direction: row;justify-content: space-between;margin:5px 0;
+        }
+        .mission-req, .finished-req{
+             font-size:16px;font-weight: 300;color:aquamarine;
+        }
+        .mission-xp , .finsihed-xp{
+             color:greenyellow;
+        }
+        .start-button,.finished-button{
+            width:80%;display:flex;align-items: center;justify-content: center;border-radius: 10px;color:black;background:rgb(40, 212, 112);padding:10px 0;font-weight: bold;margin-top:30px;
+        }
+        .mission-top-box{
+            width:100%;height:auto;display:flex;flex-direction: column;align-items: center;
+        }
+         .game-result{
+            width:100%;height:auto;display:flex;flex-direction: column;align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="score-container">
+    <div id="score"></div>
+</div>
+<div class="diamond-container">
+    <div id="diamond">0 Diamond</div>
+</div>
+<div class="xp-container">
+    <div id="xp">0 XP</div>
+</div>
+<div class="wallet-container">
+    <div id="wallet">wallet: jAaiehiao....</div>
+</div>
+<!--<div id="message" style="color:green; background-color: #a06cc2"></div>-->
+
+<div id="ThreeJS"></div>
+<div class="mission-board">
+    <span class="label">Missions</span>
+    <div class="mission-top-box">
+    
+    </div>
+    <div class="start-button" >Start Game</div>
+</div>
+<div class="finished-board">
+<span class="label">Results</span>
+ <div class="game-result">
+      
+ </div>
+   <div class="finished-button" >Continue</div>
+</div>
+<script src="./public/js/index.js" type="module" ></script>
+</body>
+</html>
